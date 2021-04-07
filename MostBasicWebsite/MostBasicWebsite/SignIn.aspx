@@ -56,7 +56,12 @@
                                 <td>User Name</td>
                             </tr>
                             <tr>
-                                <td><asp:TextBox ID="txtUserName" ToolTip="Please enter your user name" runat="server" CssClass="textbox"></asp:TextBox>
+                                <td>
+                                    <asp:TextBox ID="txtUserName" ToolTip="Please enter your user name" runat="server" CssClass="textbox"></asp:TextBox>   
+                                </td>
+                            </tr>
+                            <tr>
+                                 <td>
                                     <asp:RequiredFieldValidator ID="rfvUserName" runat="server" ControlToValidate="txtUserName" ErrorMessage="User Name cannot be empty" ForeColor="Red" ValidationGroup="ValidateSignIn"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
@@ -64,12 +69,20 @@
                                 <td>Password</td>
                             </tr>
                             <tr>
-                                <td><asp:TextBox ID="txtPassword" ToolTip="Please enter your password" runat="server" CssClass="textbox" TextMode="Password"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="Password cannot be empty" ForeColor="Red" ValidationGroup="ValidateSignIn"></asp:RequiredFieldValidator>
+                                <td>
+                                    <asp:TextBox ID="txtPassword" ToolTip="Please enter your password" runat="server" CssClass="textbox" TextMode="Password"></asp:TextBox>                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="Password cannot be empty" ForeColor="Red" ValidationGroup="ValidateSignIn" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr style="text-align:center;">
-                                <td ><asp:Button ID="btnSignIn" Text="Sign In" BackColor="SkyBlue" Width="100px" runat="server" OnClick="btnSignIn_Click" ValidationGroup="ValidateSignIn" /></td>
+                                <td >
+                                    <asp:Button ID="btnSignIn" Text="Sign In" BackColor="SkyBlue" Width="100px" runat="server" OnClick="btnSignIn_Click" ValidationGroup="ValidateSignIn" />
+
+                                </td>
                             </tr>
                         </tbody>
                     </table>

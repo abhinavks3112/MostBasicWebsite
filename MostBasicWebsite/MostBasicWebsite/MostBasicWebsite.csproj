@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SignIn.aspx" />
+    <Content Include="UsersOverview.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +79,13 @@
     </Compile>
     <Compile Include="SignIn.aspx.designer.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsersOverview.aspx.cs">
+      <DependentUpon>UsersOverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsersOverview.aspx.designer.cs">
+      <DependentUpon>UsersOverview.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
