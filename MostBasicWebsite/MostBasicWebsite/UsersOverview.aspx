@@ -1,15 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UsersOverview.aspx.cs" Inherits="MostBasicWebsite.UsersOverview" %>
+﻿<%@ Page MasterPageFile="~/Users.Master" Language="C#" AutoEventWireup="true" CodeBehind="UsersOverview.aspx.cs" Inherits="MostBasicWebsite.UsersOverview"%>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            UsersOverview</div>
-    </form>
-</body>
-</html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    UsersOverview<asp:GridView ID="GridView1" runat="server">
+    </asp:GridView>
+    <br />
+    <asp:GridView ID="GridView2" runat="server">
+    </asp:GridView>
+&nbsp;
+</asp:Content>

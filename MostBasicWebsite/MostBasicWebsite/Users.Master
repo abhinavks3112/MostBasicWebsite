@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Users.master.cs" Inherits="MostBasicWebsite.Users" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+       @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Condensed&display=swap');
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body
+        {
+            background-color: #F8F8F8;
+        }
+        header{
+            background-color: #24252A;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+        }
+        .logo
+        {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 25px;
+            color: #edf0f1;
+            width: 200px;
+            cursor: pointer;
+        }
+        .nav-list
+        {
+            list-style: none;
+        }
+        .nav-item
+        {
+            display: inline-block;
+            padding: 0 20px;
+        }
+        li, a{
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #edf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease 0s;
+        }
+            li, a:hover {
+                color: #0088a9;
+            }
+        .auto-style1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 25px;
+            color: #edf0f1;
+            width: 152px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div class="logo">BasicWebsite</div>
+            <nav>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#home">Home</a></li>
+                        <li class="nav-item"><a href="#Users">Users</a></li>
+                        <li class="nav-item"><a href="#Profile">Profile</a></li>
+                    </ul>
+            </nav>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
