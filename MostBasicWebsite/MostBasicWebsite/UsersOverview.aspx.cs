@@ -13,7 +13,7 @@ namespace MostBasicWebsite
     public partial class UsersOverview : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { 
             if(!IsPostBack)
             {
                 string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
@@ -26,8 +26,10 @@ namespace MostBasicWebsite
                         Connection = con
                     };
 
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    da.SelectCommand = cmd;
+                    SqlDataAdapter da = new SqlDataAdapter
+                    {
+                        SelectCommand = cmd
+                    };
 
                     DataSet ds = new DataSet();
                     // Opening the database connection is not required in case of data adapted
