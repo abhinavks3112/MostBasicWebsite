@@ -7,13 +7,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace MostBasicWebsite
 {
     public partial class SignIn : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {  
         }
 
         protected void btnSignIn_Click(object sender, EventArgs e)
@@ -28,8 +29,11 @@ namespace MostBasicWebsite
                     Connection = con
                 };
 
+                // Hashing the password for verifying the stored hashed password in db
+                string passwordHash = FormsAuthentication.HashPasswordForStoringInConfigFile(txtPassword.Text, "SHA1");
+
                 SqlParameter userName = new SqlParameter("@UserName", txtUserName.Text);
-                SqlParameter password = new SqlParameter("@Password", txtPassword.Text);
+                SqlParameter password = new SqlParameter("@Password", passwordHash);
 
                 cmd.Parameters.Add(userName);
                 cmd.Parameters.Add(password);
@@ -43,9 +47,10 @@ namespace MostBasicWebsite
                 {
                     Response.Write("<script>alert('Sign In Failed: Either the username or password is incorrect!!')</script>");
                 }
-                else if((int)rowsReturnedValue == 1)
+                else if ((int)rowsReturnedValue == 1)
                 {
-                    Response.Redirect("~/UsersOverview.aspx");
+                    // Redirect the user to default page and create persistent cookie based on user's choice to remember his session
+                    FormsAuthentication.RedirectFromLoginPage(txtUserName.Text, chkRememberMe.Checked);
                 }
             }
         }

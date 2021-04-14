@@ -40,6 +40,14 @@
             padding: 50px; 
             background-color: #F0F0F0; 
         }
+        .button{
+           width: 120px;
+           padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: SkyBlue;
+        }
     </style>
 </head>
 <body>
@@ -80,12 +88,19 @@
                             </tr>
                             <tr style="text-align:center;">
                                 <td >
-                                    <asp:Button ID="btnSignIn" Text="Sign In" BackColor="SkyBlue" Width="100px" runat="server" OnClick="btnSignIn_Click" ValidationGroup="ValidateSignIn" />
-
+                                    <asp:CheckBox ID="chkRememberMe" runat="server" Text="Remember Me" />
+                                </td>
+                            </tr>
+                            <tr style="text-align:center;">                                
+                                <td >
+                                    <asp:Button ID="btnSignIn" CssClass="button" Text="Sign In" BackColor="SkyBlue" Width="100px" runat="server" OnClick="btnSignIn_Click" ValidationGroup="ValidateSignIn" />
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                <div style="text-align:center">
+                    <h3>New User? Click here to <a href="/Registration/Register.aspx"><b>Register</b></a></h3>
                 </div>
             </div>
         </div>
